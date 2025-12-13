@@ -1,0 +1,34 @@
+name: "Frogbot Scan and Fix"
+on:
+  workflow_dispatch:
+    # Creating fix pull requests will be triggered by any push to one of the these branches .
+    # You can add or replace to any branch you want to open fix pull requests for.
+permissions:
+  contents: write
+  pull-requests: write
+  security-events: write
+  id-token: write
+jobs:
+  scan-repository:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+   
+      - name: Setup Node
+        uses: actions/setup-node@v3
+
+    
+      - uses: jfrog/frogbot@v2
+     #   with:
+      #    oidc-provider-name: gitoidc
+        #  oidc-audience: frogoidc
+        env:
+          # [Mandatory]
+          # JFrog platform URL
+          JF_URL: https://${{ vars.JF_URL }}/
+
+          # [Mandatory]
+          # The GitHub token automatically generated for the job
+          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+          JF_GIT_TOKEN: ${{ secrets.JF_GITHUB_TOKEN }}
+          JF_WATCHES: "Frog_watch"
