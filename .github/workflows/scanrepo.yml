@@ -19,9 +19,8 @@ jobs:
 
     
       - uses: jfrog/frogbot@v2
-     #   with:
-      #    oidc-provider-name: gitoidc
-        #  oidc-audience: frogoidc
+        with:
+          oidc-provider-name: destgithub
         env:
           # [Mandatory]
           # JFrog platform URL
@@ -29,6 +28,6 @@ jobs:
 
           # [Mandatory]
           # The GitHub token automatically generated for the job
-          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+         # JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
           JF_GIT_TOKEN: ${{ secrets.JF_GITHUB_TOKEN }}
           JF_WATCHES: "Frog_watch"
