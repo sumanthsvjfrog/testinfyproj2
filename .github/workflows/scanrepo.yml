@@ -21,9 +21,9 @@ jobs:
       - uses: jfrog/frogbot@v2
         with:
           oidc-provider-name: destgithub
+          oidc-audience: frogoidc
         env:
-          # [Mandatory]
-          # JFrog platform URL
+          JFROG_CLI_LOG_LEVEL: DEBUG
           JF_URL: https://${{ vars.JF_URL }}/
 
           # [Mandatory]
