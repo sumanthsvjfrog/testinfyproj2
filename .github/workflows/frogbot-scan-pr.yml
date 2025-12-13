@@ -36,7 +36,7 @@ jobs:
         with:
           oidc-provider-name: destgithub
         env:
-          JFROG_CLI_LOG_LEVEL: DEBUG
+          #JFROG_CLI_LOG_LEVEL: DEBUG
 
           # [Mandatory]
           # JFrog platform URL
