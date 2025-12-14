@@ -1,0 +1,22 @@
+# The "params" section includes the configuration of a single Git repository that needs to be scanned.
+# For Azure Repos, Bitbucket Server and GitHub with JFrog Pipelines or Jenkins, you can define multiple "params" sections one after the other, for scanning multiple
+# Git repositories in the same organization.
+- params:
+    # Git parameters
+    git:
+      # [Mandatory]
+      # Name of the git repository to scan
+      repoName: testinfyproj2
+
+      # [Mandatory]
+      # List of branches to scan
+      branches:
+        - main
+      #  - develop
+    scan:
+      includeAllVulnerabilities: true
+      failOnSecurityIssues: false
+     # projects:
+     #   - workingDirs:
+     #       - npmpack
+     #       - mavenpack
