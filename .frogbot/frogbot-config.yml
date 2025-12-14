@@ -12,7 +12,7 @@
       # List of branches to scan
       branches:
         - main
-      #  - develop
+        - develop
     scan:
       includeAllVulnerabilities: true
       failOnSecurityIssues: false
