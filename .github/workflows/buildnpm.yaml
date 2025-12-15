@@ -48,7 +48,7 @@ jobs:
            jf npm-config --repo-resolve=$PLATFORM_REPO --repo-deploy=$PLATFORM_REPO 
 
        - name: Run Audit scan for the git workspace
-         run: jf audit .
+         run: jf audit . --watches=Frog_watch
            
        - name: Install Dependencies
          run: |
